@@ -13,8 +13,6 @@
         .btn-cc { transition: all 0.2s; border: 2px solid #e2e8f0; font-weight: 700; color: #475569; }
         .btn-cc.active-service { border-color: #f97316; background-color: #fff7ed; color: #f97316; transform: scale(1.05); }
         .btn-cc.active-repair { border-color: #ef4444; background-color: #fef2f2; color: #ef4444; transform: scale(1.05); }
-        .option-card { transition: 0.2s; border-left: 4px solid #e2e8f0; }
-        .option-card:hover { border-left-color: #ef4444; background-color: #f8fafc; }
         .animate-section { animation: fadeInUp 0.4s ease-out; }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -32,9 +30,12 @@
                 <span class="text-xl font-black tracking-tighter uppercase">MotoService<span class="text-orange-500">Cba</span></span>
             </div>
             <div>
-                <button onclick="window.location.href='https://wa.me/tu-numero-aqui'" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-tighter transition-all active:scale-95 shadow-lg shadow-orange-500/20">
+                <!-- Enlace Directo a tu WhatsApp -->
+                <a href="https://wa.me/5493517485182?text=Hola%20MotoServiceCba,%20vengo%20desde%20la%20web%20y%20necesito%20un%20turno/consulta." 
+                   target="_blank" 
+                   class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-tighter transition-all active:scale-95 shadow-lg shadow-orange-500/20 inline-block">
                     TURNO / CONSULTA
-                </button>
+                </a>
             </div>
         </div>
     </header>
@@ -95,29 +96,27 @@
             <div class="card p-6">
                 <p class="text-slate-500 mb-4 font-semibold text-sm">Seleccione cilindrada para Reparación Pesada:</p>
                 <div class="grid grid-cols-4 md:grid-cols-7 gap-2 mb-8">
-                    <button onclick="showRepair(this, 50)" class="btn-cc py-3 rounded-xl hover:border-red-300">50</button>
-                    <button onclick="showRepair(this, 70)" class="btn-cc py-3 rounded-xl hover:border-red-300">70</button>
-                    <button onclick="showRepair(this, 90)" class="btn-cc py-3 rounded-xl hover:border-red-300">90</button>
-                    <button onclick="showRepair(this, 110)" class="btn-cc py-3 rounded-xl hover:border-red-300">110</button>
-                    <button onclick="showRepair(this, 150)" class="btn-cc py-3 rounded-xl hover:border-red-300">150</button>
-                    <button onclick="showRepair(this, 200)" class="btn-cc py-3 rounded-xl hover:border-red-300">200</button>
-                    <button onclick="showRepair(this, 250)" class="btn-cc py-3 rounded-xl hover:border-red-300">250</button>
+                    <button onclick="showRepair(this, 50)" class="btn-cc py-3 rounded-xl">50</button>
+                    <button onclick="showRepair(this, 70)" class="btn-cc py-3 rounded-xl">70</button>
+                    <button onclick="showRepair(this, 90)" class="btn-cc py-3 rounded-xl">90</button>
+                    <button onclick="showRepair(this, 110)" class="btn-cc py-3 rounded-xl">110</button>
+                    <button onclick="showRepair(this, 150)" class="btn-cc py-3 rounded-xl">150</button>
+                    <button onclick="showRepair(this, 200)" class="btn-cc py-3 rounded-xl">200</button>
+                    <button onclick="showRepair(this, 250)" class="btn-cc py-3 rounded-xl">250</button>
                 </div>
 
-                <!-- Acordeón/Persiana de Opciones -->
                 <div id="display-repair" class="hidden animate-section space-y-4">
                     <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-xl mb-4">
-                        <p class="text-red-700 font-bold">Opciones para <span id="r-cc"></span>cc:</p>
-                        <p class="text-red-600 text-xs uppercase font-bold tracking-tighter">Seleccione una categoría para ver detalles</p>
+                        <p class="text-red-700 font-bold italic text-sm">Opciones para <span id="r-cc"></span>cc:</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-1 gap-3">
+                    <div class="grid grid-cols-1 gap-3">
                         <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
                             <summary class="flex justify-between items-center p-4 cursor-pointer font-bold text-slate-700 group-hover:bg-slate-50">
                                 <span>Tapa de Cilindro</span>
                                 <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition"></i>
                             </summary>
-                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600">
+                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600 italic">
                                 Rectificación de asientos, cambio de válvulas y retenes. Control de plano.
                             </div>
                         </details>
@@ -127,7 +126,7 @@
                                 <span>Cilindro</span>
                                 <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition"></i>
                             </summary>
-                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600">
+                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600 italic">
                                 Rectificación a medida, pistón y aros nuevos. Bruñido de camisa.
                             </div>
                         </details>
@@ -137,7 +136,7 @@
                                 <span>Caja de Velocidades</span>
                                 <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition"></i>
                             </summary>
-                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600">
+                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600 italic">
                                 Revisión de engranajes, selectora y horquillas. Cambio de rodamientos.
                             </div>
                         </details>
@@ -147,7 +146,7 @@
                                 <span>Cigüeñal</span>
                                 <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition"></i>
                             </summary>
-                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600">
+                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600 italic">
                                 Cambio de biela, centrado y rodamientos de bancada.
                             </div>
                         </details>
@@ -157,7 +156,7 @@
                                 <span>Embrague</span>
                                 <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition"></i>
                             </summary>
-                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600">
+                            <div class="p-4 bg-slate-50 border-t border-slate-100 text-sm text-slate-600 italic">
                                 Cambio de discos, separadores y resortes. Control de canasta.
                             </div>
                         </details>
@@ -165,8 +164,11 @@
                 </div>
             </div>
         </section>
-
     </main>
+
+    <footer class="text-center py-6 text-slate-400 text-xs font-bold uppercase tracking-widest">
+        &copy; 2026 MotoServiceCba - Córdoba, Argentina
+    </footer>
 
     <script>
         function calcService(btn, cc) {
