@@ -192,7 +192,7 @@
         function calcService(btn, cc) {
             document.querySelectorAll('#service-section .btn-cc').forEach(b => b.classList.remove('active-service'));
             btn.classList.add('active-service');
-            let precio = (cc <= 110) ? 60000 : 80000;
+            let precio = (cc <= 110) ? 60000 : 75000;
             document.getElementById('s-cc').innerText = cc;
             document.getElementById('s-price').innerText = '$' + precio.toLocaleString('es-AR');
             document.getElementById('display-service').classList.remove('hidden');
